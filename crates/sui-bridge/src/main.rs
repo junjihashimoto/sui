@@ -29,10 +29,7 @@ const GIT_REVISION: &str = {
     if let Some(revision) = option_env!("GIT_REVISION") {
         revision
     } else {
-        let version = git_version::git_version!(
-            args = ["--always", "--abbrev=12", "--dirty", "--exclude", "*"],
-            fallback = ""
-        );
+        let version = "hoo";
 
         if version.is_empty() {
             panic!("unable to query git revision");
