@@ -18,18 +18,18 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732857208,
-        "narHash": "sha256-YuJo19YqDbeWkQ2ukz3SVVgBfEm7yWfHXlpHEmzkzNU=",
-        "owner": "junjihashimoto",
-        "repo": "nixpkgs",
-        "rev": "9670eba73131b5e6b6a1047e855fdd797700d8ae",
-        "type": "github"
+        "lastModified": 1733549622,
+        "narHash": "sha256-8S9S/PwGB5By/acyUhzqvvV6oo3d9Mx2feWHZsu5nXo=",
+        "ref": "refs/heads/feature/rust-dup",
+        "rev": "dda5ad6feb59b4208cc5c4d70426378b882d5110",
+        "revCount": 714842,
+        "type": "git",
+        "url": "file:///home/junji-hashimoto/git/nixpkgs"
       },
       "original": {
-        "owner": "junjihashimoto",
-        "repo": "nixpkgs",
-        "rev": "9670eba73131b5e6b6a1047e855fdd797700d8ae",
-        "type": "github"
+        "rev": "dda5ad6feb59b4208cc5c4d70426378b882d5110",
+        "type": "git",
+        "url": "file:///home/junji-hashimoto/git/nixpkgs"
       }
     },
     "root": {
