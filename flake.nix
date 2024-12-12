@@ -1,7 +1,9 @@
 {
   inputs = {
     fenix = {
-      url = "github:nix-community/fenix";
+#      url = "github:nix-community/fenix";
+      url = "github:junjihashimoto/fenix?rev=505c418b5114642be08180a525401a28f63f7a47";
+#      url = "git+file:///home/junji-hashimoto/git/fenix?rev=505c418b5114642be08180a525401a28f63f7a47";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #nixpkgs.url = "nixpkgs/nixos-24.11";
@@ -77,7 +79,8 @@
               bzip2
               zstd
               clang
-              toolchain.bindgenHook
+              rustPlatform.bindgenHook
+              #toolchain.bindgenHook
               # glibc.dev
               # libcxx.dev
             ] ++ lib.optionals stdenv.isDarwin [
@@ -121,14 +124,18 @@
             doCheck = false;
 
             env = {
-              ROCKSDB_INCLUDE_DIR = "${pkgs.rocksdb}/include";
-              ROCKSDB_LIB_DIR = "${pkgs.rocksdb}/lib";
+              ROCKSDB_INCLUDE_DIR = "${pkgs.rocksdb_8_3}/include";
+              ROCKSDB_LIB_DIR = "${pkgs.rocksdb_8_3}/lib";
               ZSTD_SYS_USE_PKG_CONFIG = true;
               # Includes normal include path
               # BINDGEN_EXTRA_CLANG_ARGS = lib.strings.makeSearchPath "" (builtins.map (a: ''-I"${a}/include"'') [
               #   # add dev libraries here (e.g. pkgs.libvmi.dev)
               #   pkgs.glibc.dev
               # ]);
+            };
+
+            passthru = {
+              rocksdb = pkgs.rocksdb_8_3;
             };
 
             outputs = ["out"];
